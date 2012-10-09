@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>nullpointer.cc</title>
+<style type="text/css">
+<!--
+a { color: #FFFFFF; }
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 22px; }
+.Number { color: #AD7FA8; }
+.Comment { color: #6c6c6c; }
+.Constant { color: #34e2e2; }
+.LineNr { color: #6c6c6c; }
+.Statement { color: #5fd7ff; }
+.PreProc { color: #729fcf; }
+.String { color: #8ae234; }
+.Type { color: #fcc000; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="LineNr"> 1 </span><span class="PreProc">#include </span><span class="String">&lt;stdio.h&gt;</span>
+<span class="LineNr"> 2 </span><span class="PreProc">#include </span><span class="String">&lt;string.h&gt;</span>
+<span class="LineNr"> 3 </span><span class="PreProc">#include </span><span class="String">&lt;stdlib.h&gt;</span>
+<span class="LineNr"> 4 </span>
+<span class="LineNr"> 5 </span><span class="Type">int</span> main()
+<span class="LineNr"> 6 </span>{
+<span class="LineNr"> 7 </span>  <span class="Type">char</span> *p = <span class="Constant">NULL</span>;
+<span class="LineNr"> 8 </span>
+<span class="LineNr"> 9 </span>  <span class="Comment">// various machinations</span>
+<span class="LineNr">10 </span>  <span class="Type">int</span> code = <span class="Number"><a href="http://www.github.com/nilshell">0xC0DE</a></span>;
+<span class="LineNr">11 </span>  <span class="Comment">// meat flappings </span>
+<span class="LineNr">12 </span>  <span class="Type">char</span> *<a href="#">blog</a> = (<span class="Type">char</span>*)malloc(<span class="Number">9</span>);
+<span class="LineNr">13 </span>
+<span class="LineNr">14 </span>
+<span class="LineNr">15 </span>  strncpy(blog,<span class="String">&quot;nilshell&quot;</span>,<span class="Number">8</span>); blog[<span class="Number">8</span>] = <span class="Special">'\0'</span>;
+<span class="LineNr">16 </span>  printf(<span class="String">&quot;0x</span><span class="Special">%x</span><span class="Special">\n</span><span class="String">&quot;</span>, code);
+<span class="LineNr">17 </span>  printf(<span class="String">&quot;</span><span class="Special">%s</span><span class="Special">\n</span><span class="String">&quot;</span>,   blog);
+<span class="LineNr">18 </span>
+<span class="LineNr">19 </span>  free(blog);
+<span class="LineNr">20 </span>  <span class="Statement">return</span> <span class="Number">0</span>;
+<span class="LineNr">21 </span>}
+</pre>
+</body>
+</html>
